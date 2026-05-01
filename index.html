@@ -3,20 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Landing Page</title>
+    <title>Kevenraftrituals - Repository Browser</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Welcome to Kevenraftrituals</h1>
-    <p>Select a file to browse:</p>
-    <input type="file" id="fileSelector" multiple />
+    <div class="container">
+        <header>
+            <h1>🚀 Kevenraftrituals Repository Browser</h1>
+            <p>Quick access to all repositories and files</p>
+        </header>
 
-    <script>
-        document.getElementById('fileSelector').addEventListener('change', function(event) {
-            const files = event.target.files;
-            for (let i = 0; i < files.length; i++) {
-                console.log(`Selected file: ${files[i].name}`);
-            }
-        });
-    </script>
+        <main>
+            <section class="controls">
+                <div class="search-section">
+                    <input type="text" id="repoSearch" placeholder="Search repositories..." class="search-input">
+                    <button onclick="loadRepositories()" class="btn btn-primary">Load Repositories</button>
+                </div>
+            </section>
+
+            <section class="content">
+                <div class="panel">
+                    <h2>📚 Repositories</h2>
+                    <div id="repoList" class="repo-list">
+                        <p class="placeholder">Click "Load Repositories" to get started...</p>
+                    </div>
+                </div>
+
+                <div class="panel">
+                    <h2>📄 Files</h2>
+                    <div id="fileList" class="file-list">
+                        <p class="placeholder">Select a repository to view files...</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="preview">
+                <h2>👁️ Preview</h2>
+                <div id="preview" class="preview-box">
+                    <p class="placeholder">Select a file to preview...</p>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>Built with ❤️ | GitHub API Powered</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
 </body>
 </html>
