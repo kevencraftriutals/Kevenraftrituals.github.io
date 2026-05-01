@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+</head>
+<body>
+    <h1>Welcome to Kevenraftrituals</h1>
+    <p>Select a file to browse:</p>
+    <input type="file" id="fileSelector" multiple />
+
+    <script>
+        document.getElementById('fileSelector').addEventListener('change', function(event) {
+            const files = event.target.files;
+            for (let i = 0; i < files.length; i++) {
+                console.log(`Selected file: ${files[i].name}`);
+            }
+        });
+    </script>
+</body>
+</html>
